@@ -94,12 +94,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 return;
             }
             mMap.setMyLocationEnabled(true);
-            mMap.setOnMyLocationChangeListener(location -> {
-                /*LatLng ltlng = new LatLng(location.getLatitude(), location.getLongitude());
-                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-                        ltlng, 16f);
-                mMap.animateCamera(cameraUpdate);*/
-            });
+
             Location location = mMap.getMyLocation();
 
             if(getIntent()!=null){
@@ -166,21 +161,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             String knownName = addresses.get(0).getFeatureName();
             selectedAddress= address;
 
-            /*FragmentTransaction ft = getFragmentManager().beginTransaction();
-            Fragment prev = getFragmentManager().findFragmentByTag("dialog");
-            if (prev != null) {
 
-                ft.remove(prev);
-            }
-            ft.addToBackStack(null);
-            DialogFragment dialogFragment = new ConfirmAddress();
-
-            Bundle args = new Bundle();
-            args.putDouble("lat", latLng.latitude);
-            args.putDouble("long", latLng.longitude);
-            args.putString("address", address);
-            dialogFragment.setArguments(args);
-            dialogFragment.show(getSupportFragmentManager(), "dialog");*/
             return address;
         } catch (IOException e) {
             e.printStackTrace();
