@@ -164,8 +164,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             return address;
         } catch (IOException e) {
-            e.printStackTrace();
-            return "No Address Found";
+            ;
 
         }
 
