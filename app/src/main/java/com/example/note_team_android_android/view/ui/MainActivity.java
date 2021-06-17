@@ -21,7 +21,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.note_team_android_android.R;
+import com.example.note_team_android_android.service.database.NoteDatabase;
 import com.example.note_team_android_android.service.model.Category;
+import com.example.note_team_android_android.service.utils.Constants;
+import com.example.note_team_android_android.view.adapter.CategoryAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +32,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity  extends AppCompatActivity  {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
         private RecyclerView recyclerView;
         private List<Category> categoryList;
         private CategoryAdapter categoryAdapter;
