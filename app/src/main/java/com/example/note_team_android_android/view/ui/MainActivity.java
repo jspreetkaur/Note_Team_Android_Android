@@ -21,7 +21,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.note_team_android_android.R;
+import com.example.note_team_android_android.service.database.NoteDatabase;
 import com.example.note_team_android_android.service.model.Category;
+import com.example.note_team_android_android.service.utils.Constants;
+import com.example.note_team_android_android.view.adapter.CategoryAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +32,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity  extends AppCompatActivity  {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
         private RecyclerView recyclerView;
         private List<Category> categoryList;
         private CategoryAdapter categoryAdapter;
@@ -214,6 +216,40 @@ public class MainActivity  extends AppCompatActivity  {
         public void onCategoryLongClicked(Category category, int position) {
             showUpdateDeleteCategoryDialog(category);
         }
+    private void showConfirmDeleteDialog(Category category) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        View view = LayoutInflater.from(this)
+                .inflate(R.layout.layout_delete_category,
+                        (ViewGroup) findViewById(R.id.layoutDeleteCategoryContainer));
+
+        builder.setView(view);
+        AlertDialog dialogDeleteNote = builder.create();
+
+        if(dialogDeleteNote.getWindow() != null) {
+            dialogDeleteNote.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        view.findViewById(R.id.textDeleteCategory).setOnClickListener(v -> {
+            dialogDeleteNote.dismiss();
+            ExecutorService executorService = Executors.newSingleThreadExecutor();
+            Handler handler = new Handler(Looper.getMainLooper());
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    NoteDatabase.getNotesDatabase(getApplicationContext()).noteDao().deleteCategory(category);
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            getCategorys(Constants.REQUEST_CODE_ADD_CATEGORY, false);
+                        }
+                    });
+                }
+            });
+        });
+        view.findViewById(R.id.textDeleteCancel).setOnClickListener(v -> dialogDeleteNote.dismiss());
+        dialogDeleteNote.show();
+    }
+
 
 
         private void showUpdateDeleteCategoryDialog(Category category) {
@@ -223,7 +259,7 @@ public class MainActivity  extends AppCompatActivity  {
             builder.setView(view);
 
             dialogUpdateDeleteCategory = builder.create();
-            if(dialogUpdateDeleteCategory.getWindow() != null) {
+            if (dialogUpdateDeleteCategory.getWindow() != null) {
                 dialogUpdateDeleteCategory.getWindow().setBackgroundDrawable(new ColorDrawable(0));
             }
 
@@ -237,39 +273,5 @@ public class MainActivity  extends AppCompatActivity  {
 
             });
             dialogUpdateDeleteCategory.show();
-        }
+        }}
 
-        private void showConfirmDeleteDialog(Category category) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            View view = LayoutInflater.from(this)
-                    .inflate(R.layout.layout_delete_category,
-                            (ViewGroup) findViewById(R.id.layoutDeleteCategoryContainer));
-
-            builder.setView(view);
-            AlertDialog dialogDeleteNote = builder.create();
-
-            if(dialogDeleteNote.getWindow() != null) {
-                dialogDeleteNote.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-            }
-            view.findViewById(R.id.textDeleteCategory).setOnClickListener(v -> {
-                dialogDeleteNote.dismiss();
-                ExecutorService executorService = Executors.newSingleThreadExecutor();
-                Handler handler = new Handler(Looper.getMainLooper());
-                executorService.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        NoteDatabase.getNotesDatabase(getApplicationContext()).noteDao().deleteCategory(category);
-
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                getCategorys(Constants.REQUEST_CODE_ADD_CATEGORY, false);
-                            }
-                        });
-                    }
-                });
-            });
-            view.findViewById(R.id.textDeleteCancel).setOnClickListener(v -> dialogDeleteNote.dismiss());
-            dialogDeleteNote.show();
-        }
-}
