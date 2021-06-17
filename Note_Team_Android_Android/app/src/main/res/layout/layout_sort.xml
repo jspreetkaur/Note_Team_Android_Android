@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_miscellaneous"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_miscellaneous"
+    android:orientation="vertical"
+    app:behavior_peekHeight="0dp"
+    android:paddingBottom="@dimen/_10sdp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TextView
+        android:id="@+id/textMiscellaneous"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="Sort by"
+        android:textColor="@color/colorBlackTextColor"
+        android:textSize="@dimen/_13ssp" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutTitleAscending"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:includeFontPadding="false"
+            android:text="Title (Ascending)"
+            android:textColor="@color/colorIcons"
+            android:textSize="@dimen/_12ssp" />
+
+        <ImageView
+            android:id="@+id/tickImgTitleAscending"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_done"
+            app:tint="@color/colorBlue" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTitleDescending"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:includeFontPadding="false"
+            android:text="Title (Descending)"
+            android:textColor="@color/colorIcons"
+            android:textSize="@dimen/_12ssp" />
+
+        <ImageView
+            android:id="@+id/tickImgTitleDescending"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_done"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:tint="@color/colorBlue" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTimeAscending"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_5sdp"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:includeFontPadding="false"
+            android:text="Time (Ascending)"
+
+            android:textColor="@color/colorIcons"
+            android:textSize="@dimen/_12ssp" />
+
+        <ImageView
+            android:id="@+id/tickImgTimeAscending"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_done"
+            android:visibility="gone"
+
+            android:layout_marginEnd="@dimen/_5sdp"
+
+            app:tint="@color/colorBlue" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTimeDescending"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:includeFontPadding="false"
+            android:text="Time (Descending)"
+            android:textColor="@color/colorIcons"
+            android:textSize="@dimen/_12ssp" />
+
+        <ImageView
+            android:id="@+id/tickImgTimeDescending"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_done"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:tint="@color/colorBlue" />
+    </LinearLayout>
+
+
+</LinearLayout>
