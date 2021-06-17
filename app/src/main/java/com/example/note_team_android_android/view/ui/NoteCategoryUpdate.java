@@ -138,7 +138,43 @@ public class NoteCategoryUpdate extends AppCompatActivity implements CategoryLis
     }
 
     private void getCategorys(final int requestCategory, final boolean isCategoryDeleted) {
-        
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executorService.execute(() -> {
+            List<Category> allCategorys = NoteDatabase.getNotesDatabase(getApplicationContext())
+                    .noteDao().getAllCategory();
+
+            handler.post(() -> {
+
+                categoryList.clear();
+                for (int i = 0; i < allCategorys.size(); i++) {
+                    if(allCategorys.get(i).getId() == selectedCategoryId){
+                        allCategorys.get(i).setSelected(true);
+                    }else {
+                        allCategorys.get(i).setSelected(false);
+                    }
+                    categoryList.add(allCategorys.get(i));
+                }
+                categoryAdapter.notifyDataSetChanged();
+
+                /*if(requestCategory == Constants.REQUEST_CODE_SHOW_CATEGORY) {
+                    categoryList.addAll(allCategorys);
+                    categoryAdapter.notifyDataSetChanged();
+                } else if(requestCategory == Constants.REQUEST_CODE_ADD_CATEGORY) {
+                    categoryList.add(allCategorys.get(allCategorys.size() - 1));
+                    categoryAdapter.notifyItemInserted(categoryList.size() - 1);
+                    recyclerView.smoothScrollToPosition(categoryList.size() - 1);
+                } else if(requestCategory == Constants.REQUEST_CODE_UPDATE_CATEGORY) {
+                    categoryList.remove(noteClickedPosition);
+                    if(isCategoryDeleted){
+                        categoryAdapter.notifyItemRemoved(noteClickedPosition);
+                    } else {
+                        categoryList.add(noteClickedPosition, allCategorys.get(noteClickedPosition));
+                        categoryAdapter.notifyItemChanged(noteClickedPosition);
+                    }
+                }*/
+            });
+        });
     }
 
 
