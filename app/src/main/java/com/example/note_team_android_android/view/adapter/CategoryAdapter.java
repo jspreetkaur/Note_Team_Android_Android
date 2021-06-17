@@ -31,7 +31,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     private List<Category> notes;
     private List<Category> notesSource;
-    private Cate noteListener;
+    private CategoryListener noteListener;
     private Context mContext;
 
     private Timer timer;
