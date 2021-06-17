@@ -19,6 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.example.note_team_android_android.service.database.NoteDatabase;
+import com.example.note_team_android_android.service.model.Category;
+import com.example.note_team_android_android.service.model.Note;
+import com.example.note_team_android_android.service.utils.Constants;
+import com.example.note_team_android_android.view.adapter.CategoryAdapter;
 import com.notesapp.R;
 import com.notesapp.service.database.NoteDatabase;
 import com.notesapp.service.model.Category;
