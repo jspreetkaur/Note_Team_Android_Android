@@ -19,19 +19,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.example.note_team_android_android.callback.CategoryListener;
 import com.example.note_team_android_android.service.database.NoteDatabase;
 import com.example.note_team_android_android.service.model.Category;
 import com.example.note_team_android_android.service.model.Note;
 import com.example.note_team_android_android.service.utils.Constants;
 import com.example.note_team_android_android.view.adapter.CategoryAdapter;
-import com.notesapp.R;
-import com.notesapp.service.database.NoteDatabase;
-import com.notesapp.service.model.Category;
-import com.notesapp.service.model.Note;
-import com.notesapp.service.utils.Constants;
-import com.notesapp.view.adapter.CategoryAdapter;
-import com.notesapp.view.callback.CategoryListener;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;

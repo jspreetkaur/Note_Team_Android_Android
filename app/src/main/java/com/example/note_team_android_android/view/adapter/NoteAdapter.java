@@ -13,6 +13,7 @@ import java.util.logging.LogRecord;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.note_team_android_android.callback.NoteListener;
 import com.example.note_team_android_android.service.model.Note;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.notesapp.R;

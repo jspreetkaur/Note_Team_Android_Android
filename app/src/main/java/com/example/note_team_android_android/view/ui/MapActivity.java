@@ -102,17 +102,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     double longIntent = getIntent().getDoubleExtra("longitude",0.0);
 
                 if(latIntent != 0.0 && longIntent != 0.0) {
-                    LatLng latLngIntent = new LatLng(latIntent,longIntent);
-
-                    MarkerOptions markerOptions = new MarkerOptions();
-                    markerOptions.position(latLngIntent);
-                    markerOptions.title(getAddress(latLngIntent));
-                    mMap.clear();
-                    CameraUpdate loctionIntent = CameraUpdateFactory.newLatLngZoom(latLngIntent, 16);
-                    mMap.animateCamera(loctionIntent);
-                    mMap.addMarker(markerOptions);
-                    selectedLatitude = latIntent;
-                    selectedLongitude = longIntent;
+                    
                 }
 
             }
@@ -164,8 +154,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             return address;
         } catch (IOException e) {
-            e.printStackTrace();
-            return "No Address Found";
+            ;
 
         }
 
