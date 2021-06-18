@@ -1,2 +1,2 @@
-rootProject.name = "note_team_android_android"
 include ':app'
+rootProject.name = "Note_Team_Android_iOS"

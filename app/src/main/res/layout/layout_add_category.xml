@@ -19,8 +19,7 @@
         android:src="@drawable/ic_folder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/colorBlackTextColor"
-        android:layout_marginLeft="@dimen/_8sdp" />
+        app:tint="@color/colorBlackTextColor" />
 
     <TextView
         android:id="@+id/textAddURLTitle"
@@ -86,8 +85,7 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputLL"
-        android:layout_marginRight="@dimen/_8sdp" />
+        app:layout_constraintTop_toBottomOf="@id/inputLL" />
 
     <TextView
         android:id="@+id/textCancel"
@@ -104,8 +102,7 @@
         android:textSize="@dimen/_13ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/textAdd"
-        app:layout_constraintTop_toBottomOf="@id/inputLL"
-        android:layout_marginRight="@dimen/_8sdp" />
+        app:layout_constraintTop_toBottomOf="@id/inputLL" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

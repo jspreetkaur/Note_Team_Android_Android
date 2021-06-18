@@ -22,8 +22,7 @@
             android:layout_marginStart="@dimen/_8sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_delete"
-            app:tint="@color/colorDelete"
-            android:layout_marginLeft="@dimen/_8sdp" />
+            app:tint="@color/colorDelete" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,8 +61,7 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_pencil"
 
-            app:tint="@color/colorBlue"
-            android:layout_marginLeft="@dimen/_8sdp" />
+            app:tint="@color/colorBlue" />
 
         <TextView
             android:id="@+id/textDeleteNoteTitle"

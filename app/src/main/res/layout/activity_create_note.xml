@@ -31,8 +31,7 @@
                 android:padding="@dimen/_2sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/black"
-                android:layout_marginRight="@dimen/_12sdp" />
+                app:tint="@color/black" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -121,7 +120,7 @@
 
                     android:textColor="@color/colorBlackTextColor"
                     android:textSize="@dimen/_10ssp"
-                    android:layout_marginLeft="@dimen/_12sdp" />
+                     />
 
 
                 <EditText
@@ -169,8 +168,7 @@
                         android:src="@drawable/ic_location"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/colorBlue"
-                        android:layout_marginLeft="@dimen/_8sdp" />
+                        app:tint="@color/colorBlue" />
 
                     <TextView
                         android:id="@+id/addressTv"
@@ -193,8 +191,7 @@
                         android:layout_marginEnd="@dimen/_8sdp"
                         android:contentDescription="@string/app_name"
                         android:src="@drawable/ic_pencil"
-                        app:tint="@color/colorBlue"
-                        android:layout_marginRight="@dimen/_8sdp" />
+                        app:tint="@color/colorBlue" />
 
                 </LinearLayout>
 
@@ -222,8 +219,7 @@
                         android:src="@drawable/ic_headphone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/colorBlue"
-                        android:layout_marginLeft="@dimen/_8sdp" />
+                        app:tint="@color/colorBlue" />
 
                     <TextView
                         android:id="@+id/audioTimeTv"
@@ -295,16 +291,14 @@
                         app:riv_corner_radius_top_left="@dimen/_10sdp"
                         app:riv_corner_radius_top_right="@dimen/_10sdp"
                         app:riv_corner_radius_bottom_right="@dimen/_10sdp"
-                        app:riv_corner_radius_bottom_left="@dimen/_10sdp"
-                        tools:ignore="MissingClass" />
+                        app:riv_corner_radius_bottom_left="@dimen/_10sdp"/>
 
                     <LinearLayout
                         android:layout_width="@dimen/_50sdp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:gravity="top"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentRight="true">
+                        android:layout_alignParentTop="true">
                         <ImageView
                             android:id="@+id/imageRemoveImage"
                             android:layout_width="@dimen/_25sdp"
@@ -317,8 +311,7 @@
                             android:layout_alignEnd="@+id/imageNote"
                             android:src="@drawable/ic_delete"
                             android:visibility="gone"
-                            app:tint="@color/colorWhiteTextColor"
-                            android:layout_alignRight="@+id/imageNote" />
+                            app:tint="@color/colorWhiteTextColor" />
                     </LinearLayout>
 
 
